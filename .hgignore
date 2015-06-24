@@ -1,0 +1,4 @@
+syntax: glob
+
+/db/bookshelf_development
+/db/bookshelf_test
