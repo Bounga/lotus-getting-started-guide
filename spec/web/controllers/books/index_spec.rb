@@ -9,4 +9,9 @@ describe Web::Controllers::Books::Index do
     response = action.call(params)
     response[0].must_equal 200
   end
+
+  it 'exposes all books' do
+    action.call(params)
+    action.exposures[:books].must_equal BookRepository.all
+  end
 end
