@@ -31,5 +31,14 @@ describe Web::Controllers::Books::Create do
       response = action.call(params)
       response[0].must_equal 200
     end
+
+    it 'sets errors in object' do
+      action.call(params)
+
+      refute action.params.valid?
+
+      action.errors.for('book.title').wont_be_empty
+      action.errors.for('book.author').wont_be_empty
+    end
   end
 end
