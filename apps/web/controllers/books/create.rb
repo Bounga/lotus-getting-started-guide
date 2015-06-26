@@ -14,7 +14,7 @@ module Web::Controllers::Books
         book = Book.new(params[:book])
         BookRepository.create(book)
 
-        redirect_to '/books'
+        redirect_to routes.books_path
       end
     end
   end
